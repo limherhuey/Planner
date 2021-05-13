@@ -1,5 +1,5 @@
 
-# CS50 Final Project
+# Planner
 > This project uses Flask (Python), SQL, HTML, CSS, and JavaScript.
 
 Planner is a web-based application which allows users to customise their own daily to-do list as well as long term projects,
