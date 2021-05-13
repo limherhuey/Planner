@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Timer
+{% endblock %}
+
+{% block main %}
+
+    <div id="timer">00 : 00 : 00</div>
+
+    <div id="timerbuttons" class="btn-group" role="group" aria-label="timer controls">
+        <button type="button" onclick="startTimer()" class="btn btn-warning">Start</button>
+        <button type="button" onclick="stopTimer()" class="btn btn-warning">Stop</button>
+        <button type="button" onclick="resetTimer()" class="btn btn-warning">Reset</button>
+    </div>
+
+    <form id="settimerform">
+        <div class="form-row">
+            <div class="col-auto">
+                <input type="text" id="hour" class="form-control col-sm1" placeholder="Hours" autocomplete="off">
+            </div>
+            <div class="col-auto">
+                <input type="text" id="min" class="form-control" placeholder="Minutes" autocomplete="off">
+            </div>
+            <div class="col-auto">
+                <input type="text" id="sec" class="form-control" placeholder="Seconds" autocomplete="off">
+            </div>
+            <button type="button" onclick="setTimer()" class="btn btn-warning col-sm-1">Set</button>
+        </div>
+    </form>
+
+{% endblock %}

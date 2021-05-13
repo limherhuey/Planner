@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Projects
+{% endblock %}
+
+{% block main %}
+
+    <h3>Your active projects:</h3><br>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Notes</th>
+                <th>Started</th>
+                <th>Deadline</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        {% for project in projects %}
+        <tr>
+            <td>{{ project["title"] }}</td>
+            <td>{{ project["notes"] }}</td>
+            <td>{{ project["startdate"] }}</td>
+            <td>{{ project["deadline"] }}</td>
+            <td>
+                <form action="/projects" method="post">
+                    <input type="hidden" name="project_id" value="{{ project["id"] }}"/>
+                    <input type="hidden" name="complete" value="true"/>
+                    <button class="btn btn-outline-warning btn-sm" type="submit">Done!</button>
+                </form>
+                <form action="/projects" method="post">
+                    <input type="hidden" name="project_id" value="{{ project["id"] }}"/>
+                    <input type="hidden" name="delete" value="true"/>
+                    <button class="btn btn-outline-warning btn-sm" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br>
+    <form action="/new_project" method="get">
+        <button class="btn btn-warning ml-10" type="submit">Add New Project</button>
+    </form>
+
+    <form action="/all_projects" method="get" class="doublebutton">
+        <button class="btn btn-warning ml-10" type="submit">See All Projects</button>
+    </form>
+
+{% endblock %}

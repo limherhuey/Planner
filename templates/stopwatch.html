@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stopwatch
+{% endblock %}
+
+{% block main %}
+
+
+    <div id="stopwatch">00 : 00 : 00</div>
+
+    <br>
+    <div class="btn-group" id="swb" role="group" aria-label="stopwatch controls">
+        <button type="button" onclick="startStopwatch()" class="btn btn-warning">Start</button>
+        <button type="button" onclick="stopStopwatch()" class="btn btn-warning">Stop</button>
+        <button type="button" onclick="resetStopwatch()" class="btn btn-warning">Reset</button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Clock
+{% endblock %}
+
+{% block main %}
+
+    <div id="clock">
+        <a id="dayofweek"></a><br>
+        <a id="date"></a><br>
+        <a id="time"></a>
+    </div>
+
+    
+    <p class="tswinfo">Check out the timer and stopwatch functions below! All catered to your needs.</p>
+
+
+    <div class="container ml-5 tsw">
+      <div class="row mb-5 ml-5">
+        <div class="col-md-6 col-lg-4 mr-5 ml-5">
+          <div class="block-7">
+            <div class="text-center">
+            <h2 class="heading">Timer</h2>
+              <a href="/timer" class="btn btn-warning d-block px-3 py-3 mb-4">Get Started</a>
+            <p>Just what you need for timing your work. Set any length of time, and this smart timer will calculate the time for you.
+              Start, stop, and reset the timer anytime. Red flashing will grab your attention when the time is up.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 ml-5">
+          <div class="block-7">
+            <div class="text-center">
+            <h2 class="heading">Stopwatch</h2>
+              <a href="/stopwatch" class="btn btn-warning d-block px-3 py-3 mb-4">Get Started</a>
+            <p>Have a handy stopwatch right beside you to keep track of time passed with just a simple 'start' button.
+              Stop timing by pressing the 'stop' button, and start again anytime. Reset with the 'reset' button to start fresh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    All Projects
+{% endblock %}
+
+{% block main %}
+
+    <h3>All your projects:</h3><br>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Notes</th>
+                <th>Started</th>
+                <th>Ended/Deadline</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        {% for project in projects %}
+        {% if not project["completed"] %}
+        <tr>
+        {% else %}
+        <tr class="completed">
+        {% endif %}
+            <td>{{ project["title"] }}</td>
+            <td>{{ project["notes"] }}</td>
+            <td>{{ project["startdate"] }}</td>
+            <td>{% if project["completed"] %}{{ project["enddate"] }}{% else %}{{ project["deadline"] }}{% endif %}</td>
+            <td>
+                <form action="/all_projects" method="post">
+                    <input type="hidden" name="project_id" value="{{ project["id"] }}"/>
+                    <button class="btn btn-outline-warning btn-sm" type="submit">Edit</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+    <br>
+    <form action="/new_project" method="get">
+        <button class="btn btn-warning" type="submit">Add New Project</button>
+    </form>
+
+    <form action="/projects" method="get" class="doublebutton">
+        <button class="btn btn-warning" type="submit">See Current Projects</button>
+    </form>
+
+{% endblock %}

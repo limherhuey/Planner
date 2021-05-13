@@ -1,0 +1,154 @@
+
+nav .navbar-brand
+{
+    font-size: x-large;
+}
+
+main .form-control
+{
+    display: inline-block;
+    width: auto;
+}
+
+body
+{
+    background-color: #fefee1;
+}
+
+footer
+{
+    padding-top: 64px;
+    padding-bottom: 40px;
+}
+
+#homemain
+{
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+}
+
+#homeguide
+{
+    margin-top: 500px;
+}
+
+#greyinfo
+{
+    font-style: italic;
+}
+
+#daydate
+{
+    padding-bottom: 15px;
+    color: #9696fd;
+}
+
+table .completed
+{
+    background-color: #efefcd;
+}
+
+.centralisepage
+{
+    text-align: center;
+    padding-top: 60px;
+}
+
+#log
+{
+    padding-top: 70px;
+    padding-bottom: 40px;
+    color: #9696fd;
+}
+
+#reg
+{
+    padding-top:60px;
+    padding-bottom: 4px;
+    color: #9696fd;
+}
+
+.reglog
+{
+    color: #9696fd;
+}
+
+.doublebutton
+{
+    padding-top: 15px;
+}
+
+#cancelb
+{
+    margin-top: 45px;
+    margin-bottom: 60px;
+}
+
+.newtb
+{
+    margin-bottom: 140px;
+}
+
+#alldt
+{
+    margin-top: 90px;
+}
+
+#dayofweek, #date
+{
+    font-size: 22px;
+}
+
+#time
+{
+    font-size: 180px;
+}
+
+#clock
+{
+    text-align: center;
+    font-weight: bold;
+    font-family: garamond;
+}
+
+.tsw
+{
+    margin-top: 140px;
+}
+
+.tswinfo
+{
+    text-align: center;
+    color: #9696fd;
+    margin-top: 80px;
+}
+
+.timer
+{
+    padding-right:0;
+    padding-left:0;
+}
+
+#settimerform
+{
+    margin-top: 10px;
+    margin-left: 160px;
+}
+
+#stopwatch, #timer
+{
+    font-size: 170px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: garamond;
+}
+
+#swb, #timerbuttons
+{
+    margin-left: 700px;
+}

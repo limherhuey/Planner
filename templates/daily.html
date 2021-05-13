@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Daily Tasks
+{% endblock %}
+
+{% block main %}
+
+    <h3>Your tasks for today:</h3><br>
+
+    <div id="daydate">
+        <a>{{ week_day }}</a><br>
+        <a>{{ month }} {{ day }}, {{year}}</a>
+    </div>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Priority</th>
+                <th>Task</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        {% for task in tasks %}
+        {% if not task["completed"] %}
+        <tr>
+        {% else %}
+        <tr class="completed">
+        {% endif %}
+            <td>{{ task["priority"] }}</td>
+            <td>{{ task["task"] }}</td>
+            <td>{{ task["notes"] }}</td>
+            <td>
+                {% if not task["completed"] %}
+                <form action="/daily_tasks" method="post">
+                    <input type="hidden" name="task_id" value="{{ task["id"] }}"/>
+                    <input type="hidden" name="complete" value="true"/>
+                    <button class="btn btn-outline-warning btn-sm" type="submit">Done!</button>
+                </form>
+                {% else %}
+                <form action="/daily_tasks" method="post">
+                    <input type="hidden" name="task_id" value="{{ task["id"] }}"/>
+                    <input type="hidden" name="uncomplete" value="true"/>
+                    <button class="btn btn-outline-warning btn-sm" type="submit">Re-do!</button>
+                </form>
+                {% endif %}
+                <form action="/daily_tasks" method="post">
+                    <input type="hidden" name="task_id" value="{{ task["id"] }}"/>
+                    <input type="hidden" name="delete" value="true"/>
+                    <button class="btn btn-outline-warning btn-sm" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <form action="/new_task" method="get">
+        <button class="btn btn-warning" type="submit">Add New Task</button>
+    </form>
+
+{% endblock %}

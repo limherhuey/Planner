@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New Project
+{% endblock %}
+
+{% block main %}
+
+    <form action="/new_project" method="post">
+        <div class="form-group row">
+            <label for="project" class="col-sm-2 col-form-label">Project Title</label>
+            <input id="project" autocomplete="off" class="form-control col-md-6" name="title" placeholder="eg. final project" type="text" required>
+        </div>
+        <div class="form-group row">
+            <label for="project_notes" class="col-sm-2 col-form-label">Additional Notes</label>
+            <input id="project_notes" autocomplete="off" class="form-control col-md-6" name="notes" placeholder="eg. make web application" type="text">
+        </div>
+        <div class="form-group row">
+            <label for="deadline" class="col-sm-2 col-form-label">Deadline</label>
+            <input id="deadline" autocomplete="off" class="form-control col-sm-2" name="deadline" type="date" min="{{ today }}" required>
+        </div>
+        <button type="submit" class="btn btn-outline-warning newtb">Add Project</button>
+    </form>
+
+{% endblock %}

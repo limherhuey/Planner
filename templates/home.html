@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <div id="homemain">
+        <h1><b>Your Daily Planner</b></h1>
+        <p>An easy-to-use web application to organise your tasks and track productivity.</p><br>
+        <form method="post" action="/">
+            <button type="submit" class="btn btn-warning btn-lg">Start Exploring</button>
+        </form>
+    </div>
+
+
+
+
+    <h5 id="homeguide">A brief guide</h5>
+    <P>Daily Tasks - where you may add any tasks you wish to complete for the day and keep track of your progress using the 'done' function.</P>
+    <p>Projects - organise all your projects here with start dates and deadlines to help you progress, edit them anytime you decide to change the title or take notes when you come up with great ideas for a project during brainstorming!</p>
+    <p>Profile - a page that logs all your past tasks as well as projects for an overview of your productivity.</p>
+    <p id="greyinfo">*Once you've completed a task or project, mark it as such and it will be greyed out from the lists!</p>
+
+    <br>
+    <p>Clock - a minimalistic screen showing the time and date, an ideal display for your device while working.</p>
+    <p>Timer - allows you to set any amount of time, and flashes red for up to 5 minutes when time's up.</p>
+    <p>Stopwatch - equipped with basic functions to help you keep track of time.</p>
+{% endblock %}
