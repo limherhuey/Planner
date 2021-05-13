@@ -6,7 +6,6 @@ Planner is a web-based application which allows users to customise their own dai
 it also has other utilities that users can take advantage of to get their work done.
 
 ### Details of components:
----
 * Homepage
     - the main page of the website, with a brief description of the website and its different pages
 
